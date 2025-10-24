@@ -38,6 +38,7 @@ namespace NomiData
             this.btnConectar = new System.Windows.Forms.Button();
             this.lblBasesDatos = new System.Windows.Forms.Label();
             this.cmbBasesDatos = new System.Windows.Forms.ComboBox();
+            this.btnIngresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -126,12 +127,25 @@ namespace NomiData
             this.cmbBasesDatos.Name = "cmbBasesDatos";
             this.cmbBasesDatos.Size = new System.Drawing.Size(327, 24);
             this.cmbBasesDatos.TabIndex = 9;
+            this.cmbBasesDatos.SelectedIndexChanged += new System.EventHandler(this.cmbBasesDatos_SelectedIndexChanged);
+            //
+            // btnIngresar
+            //
+            this.btnIngresar.Location = new System.Drawing.Point(17, 339);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(327, 35);
+            this.btnIngresar.TabIndex = 10;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Visible = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 345);
+            this.ClientSize = new System.Drawing.Size(361, 392);
+            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.cmbBasesDatos);
             this.Controls.Add(this.lblBasesDatos);
             this.Controls.Add(this.btnConectar);
@@ -164,5 +178,6 @@ namespace NomiData
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Label lblBasesDatos;
         private System.Windows.Forms.ComboBox cmbBasesDatos;
+        private System.Windows.Forms.Button btnIngresar;
     }
 }
