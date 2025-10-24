@@ -148,12 +148,8 @@ namespace NomiData
                     connection.Open();
                 }
 
-                // Abrir el formulario de ejecución de scripts enviando la cadena de conexión base y la base seleccionada.
-                var formulario = new FrmEjecucionScript(baseConnectionString, baseSeleccionada)
-                {
-                    // Definir un stored procedure de ejemplo a ejecutar desde el nuevo formulario.
-                    ScriptStoredProcedure = "sp_MiStoredProcedure"
-                };
+                // Abrir el formulario de consulta de datos enviando la cadena de conexión base y la base seleccionada.
+                var formulario = new FrmConsultaDatos(builder.ToString(), baseSeleccionada);
 
                 formulario.Show(this);
             }
