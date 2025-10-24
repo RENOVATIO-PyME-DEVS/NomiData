@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|c:\\users\\guada\\music\\vs2022\\nomidata\\nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmEjecucionScript.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NomiData\\FrmEjecucionScript.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\frmejecucionscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\frmejecucionscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 28,
+          "SelectedChildIndex": 25,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,51 +122,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmMenu.cs",
-              "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmMenu.cs",
-              "RelativeDocumentMoniker": "NomiData\\FrmMenu.cs",
-              "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmMenu.cs",
-              "RelativeToolTip": "NomiData\\FrmMenu.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAUwIYAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FrmEjecucionScript.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmEjecucionScript.Designer.cs",
+              "RelativeDocumentMoniker": "NomiData\\FrmEjecucionScript.Designer.cs",
+              "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmEjecucionScript.Designer.cs",
+              "RelativeToolTip": "NomiData\\FrmEjecucionScript.Designer.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T23:16:47.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmMenu.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmMenu.cs",
-              "RelativeDocumentMoniker": "NomiData\\FrmMenu.cs",
-              "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmMenu.cs [Dise\u00F1o]",
-              "RelativeToolTip": "NomiData\\FrmMenu.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T23:15:41.202Z"
+              "WhenOpened": "2025-10-24T17:09:41.615Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs",
-              "RelativeDocumentMoniker": "NomiData\\Form1.cs",
-              "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs",
-              "RelativeToolTip": "NomiData\\Form1.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAmwEEAAAAmAAAAAAAAAA==",
+              "Title": "FrmEjecucionScript.cs",
+              "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmEjecucionScript.cs",
+              "RelativeDocumentMoniker": "NomiData\\FrmEjecucionScript.cs",
+              "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\FrmEjecucionScript.cs",
+              "RelativeToolTip": "NomiData\\FrmEjecucionScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T23:08:49.672Z",
+              "WhenOpened": "2025-10-24T17:04:24.793Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs",
-              "RelativeDocumentMoniker": "NomiData\\Form1.cs",
-              "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "NomiData\\Form1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T22:31:25.775Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

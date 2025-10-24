@@ -47,7 +47,7 @@ namespace NomiData
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(266, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(242, 25);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Conexión a SQL Server";
             // 
@@ -56,7 +56,7 @@ namespace NomiData
             this.lblServidor.AutoSize = true;
             this.lblServidor.Location = new System.Drawing.Point(14, 52);
             this.lblServidor.Name = "lblServidor";
-            this.lblServidor.Size = new System.Drawing.Size(117, 17);
+            this.lblServidor.Size = new System.Drawing.Size(108, 16);
             this.lblServidor.TabIndex = 1;
             this.lblServidor.Text = "Nombre servidor";
             // 
@@ -66,13 +66,14 @@ namespace NomiData
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(327, 22);
             this.txtServidor.TabIndex = 2;
+            this.txtServidor.Text = "10.1.86.41\\COMPAC";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Location = new System.Drawing.Point(14, 111);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(55, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(54, 16);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Usuario";
             // 
@@ -82,13 +83,14 @@ namespace NomiData
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(327, 22);
             this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.Text = "sa";
             // 
             // lblContrasena
             // 
             this.lblContrasena.AutoSize = true;
             this.lblContrasena.Location = new System.Drawing.Point(14, 170);
             this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(77, 17);
+            this.lblContrasena.Size = new System.Drawing.Size(76, 16);
             this.lblContrasena.TabIndex = 5;
             this.lblContrasena.Text = "Contraseña";
             // 
@@ -99,6 +101,7 @@ namespace NomiData
             this.txtContrasena.PasswordChar = '•';
             this.txtContrasena.Size = new System.Drawing.Size(327, 22);
             this.txtContrasena.TabIndex = 6;
+            this.txtContrasena.Text = "12345";
             // 
             // btnConectar
             // 
@@ -115,7 +118,7 @@ namespace NomiData
             this.lblBasesDatos.AutoSize = true;
             this.lblBasesDatos.Location = new System.Drawing.Point(14, 279);
             this.lblBasesDatos.Name = "lblBasesDatos";
-            this.lblBasesDatos.Size = new System.Drawing.Size(144, 17);
+            this.lblBasesDatos.Size = new System.Drawing.Size(132, 16);
             this.lblBasesDatos.TabIndex = 8;
             this.lblBasesDatos.Text = "Bases de datos (filtr.)";
             // 
@@ -128,9 +131,9 @@ namespace NomiData
             this.cmbBasesDatos.Size = new System.Drawing.Size(327, 24);
             this.cmbBasesDatos.TabIndex = 9;
             this.cmbBasesDatos.SelectedIndexChanged += new System.EventHandler(this.cmbBasesDatos_SelectedIndexChanged);
-            //
+            // 
             // btnIngresar
-            //
+            // 
             this.btnIngresar.Location = new System.Drawing.Point(17, 339);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(327, 35);

@@ -1,9 +1,3 @@
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.AssemblyReference.cache
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.Form1.resources
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.FrmMenu.resources
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.Properties.Resources.resources
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.GenerateResource.cache
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.CoreCompileInputs.cache
 C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\NomiData.exe.config
 C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\NomiData.exe
 C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\NomiData.pdb
@@ -91,7 +85,12 @@ C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\ru\Microsoft.Data.SqlCli
 C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\tr\Microsoft.Data.SqlClient.resources.dll
 C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\guada\Music\VS2022\NomiData\NomiData\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.AssemblyReference.cache
+C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.Form1.resources
+C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.FrmMenu.resources
+C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.Properties.Resources.resources
+C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.GenerateResource.cache
+C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.CoreCompileInputs.cache
 C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.csproj.Up2Date
 C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.exe
 C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.pdb
-C:\Users\guada\Music\VS2022\NomiData\NomiData\obj\Debug\NomiData.exe.config
