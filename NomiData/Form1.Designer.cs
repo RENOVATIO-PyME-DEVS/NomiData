@@ -1,4 +1,4 @@
-﻿namespace NomiData
+namespace NomiData
 {
     partial class Form1
     {
@@ -28,182 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblServidor = new System.Windows.Forms.Label();
             this.txtServidor = new System.Windows.Forms.TextBox();
-            this.txtBaseDatos = new System.Windows.Forms.TextBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.chkWindowsAuth = new System.Windows.Forms.CheckBox();
+            this.lblContrasena = new System.Windows.Forms.Label();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnConectar = new System.Windows.Forms.Button();
-            this.btnProbar = new System.Windows.Forms.Button();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.lblBasesDatos = new System.Windows.Forms.Label();
+            this.cmbBasesDatos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(266, 25);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Conexión a SQL Server";
+            // 
+            // lblServidor
+            // 
+            this.lblServidor.AutoSize = true;
+            this.lblServidor.Location = new System.Drawing.Point(14, 52);
+            this.lblServidor.Name = "lblServidor";
+            this.lblServidor.Size = new System.Drawing.Size(117, 17);
+            this.lblServidor.TabIndex = 1;
+            this.lblServidor.Text = "Nombre servidor";
             // 
             // txtServidor
             // 
-            this.txtServidor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtServidor.Location = new System.Drawing.Point(38, 44);
+            this.txtServidor.Location = new System.Drawing.Point(17, 72);
             this.txtServidor.Name = "txtServidor";
-            this.txtServidor.Size = new System.Drawing.Size(322, 22);
-            this.txtServidor.TabIndex = 0;
+            this.txtServidor.Size = new System.Drawing.Size(327, 22);
+            this.txtServidor.TabIndex = 2;
             // 
-            // txtBaseDatos
+            // lblUsuario
             // 
-            this.txtBaseDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBaseDatos.Location = new System.Drawing.Point(38, 100);
-            this.txtBaseDatos.Name = "txtBaseDatos";
-            this.txtBaseDatos.Size = new System.Drawing.Size(322, 22);
-            this.txtBaseDatos.TabIndex = 1;
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(14, 111);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(55, 17);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Usuario";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsuario.Location = new System.Drawing.Point(38, 159);
+            this.txtUsuario.Location = new System.Drawing.Point(17, 131);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(322, 22);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Size = new System.Drawing.Size(327, 22);
+            this.txtUsuario.TabIndex = 4;
             // 
-            // txtPassword
+            // lblContrasena
             // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(38, 225);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '•';
-            this.txtPassword.Size = new System.Drawing.Size(322, 22);
-            this.txtPassword.TabIndex = 3;
+            this.lblContrasena.AutoSize = true;
+            this.lblContrasena.Location = new System.Drawing.Point(14, 170);
+            this.lblContrasena.Name = "lblContrasena";
+            this.lblContrasena.Size = new System.Drawing.Size(77, 17);
+            this.lblContrasena.TabIndex = 5;
+            this.lblContrasena.Text = "Contraseña";
             // 
-            // chkWindowsAuth
+            // txtContrasena
             // 
-            this.chkWindowsAuth.AutoSize = true;
-            this.chkWindowsAuth.Location = new System.Drawing.Point(38, 265);
-            this.chkWindowsAuth.Name = "chkWindowsAuth";
-            this.chkWindowsAuth.Size = new System.Drawing.Size(213, 20);
-            this.chkWindowsAuth.TabIndex = 4;
-            this.chkWindowsAuth.Text = "Usar autenticación de windows";
-            this.chkWindowsAuth.UseVisualStyleBackColor = true;
+            this.txtContrasena.Location = new System.Drawing.Point(17, 190);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '•';
+            this.txtContrasena.Size = new System.Drawing.Size(327, 22);
+            this.txtContrasena.TabIndex = 6;
             // 
             // btnConectar
             // 
-            this.btnConectar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConectar.Location = new System.Drawing.Point(38, 301);
+            this.btnConectar.Location = new System.Drawing.Point(17, 228);
             this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(322, 54);
-            this.btnConectar.TabIndex = 5;
+            this.btnConectar.Size = new System.Drawing.Size(327, 35);
+            this.btnConectar.TabIndex = 7;
             this.btnConectar.Text = "Conectar";
             this.btnConectar.UseVisualStyleBackColor = true;
             this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
-            // btnProbar
+            // lblBasesDatos
             // 
-            this.btnProbar.Location = new System.Drawing.Point(273, 259);
-            this.btnProbar.Name = "btnProbar";
-            this.btnProbar.Size = new System.Drawing.Size(87, 31);
-            this.btnProbar.TabIndex = 6;
-            this.btnProbar.Text = "Probar";
-            this.btnProbar.UseVisualStyleBackColor = true;
-            this.btnProbar.Click += new System.EventHandler(this.btnProbar_Click);
+            this.lblBasesDatos.AutoSize = true;
+            this.lblBasesDatos.Location = new System.Drawing.Point(14, 279);
+            this.lblBasesDatos.Name = "lblBasesDatos";
+            this.lblBasesDatos.Size = new System.Drawing.Size(144, 17);
+            this.lblBasesDatos.TabIndex = 8;
+            this.lblBasesDatos.Text = "Bases de datos (filtr.)";
             // 
-            // lblEstado
+            // cmbBasesDatos
             // 
-            this.lblEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEstado.Location = new System.Drawing.Point(42, 375);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(318, 39);
-            this.lblEstado.TabIndex = 7;
-            this.lblEstado.Text = "label1";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnConectar);
-            this.panel1.Controls.Add(this.lblEstado);
-            this.panel1.Controls.Add(this.txtServidor);
-            this.panel1.Controls.Add(this.btnProbar);
-            this.panel1.Controls.Add(this.txtBaseDatos);
-            this.panel1.Controls.Add(this.txtUsuario);
-            this.panel1.Controls.Add(this.chkWindowsAuth);
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Location = new System.Drawing.Point(12, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 425);
-            this.panel1.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Servidor";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Base de datos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Usuario";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 204);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Contraseña";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(278, 25);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Ingresar credenciales sql";
+            this.cmbBasesDatos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBasesDatos.FormattingEnabled = true;
+            this.cmbBasesDatos.Location = new System.Drawing.Point(17, 299);
+            this.cmbBasesDatos.Name = "cmbBasesDatos";
+            this.cmbBasesDatos.Size = new System.Drawing.Size(327, 24);
+            this.cmbBasesDatos.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 495);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(361, 345);
+            this.Controls.Add(this.cmbBasesDatos);
+            this.Controls.Add(this.lblBasesDatos);
+            this.Controls.Add(this.btnConectar);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.lblContrasena);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.txtServidor);
+            this.Controls.Add(this.lblServidor);
+            this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.TopMost = true;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Conexión a SQL Server";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,20 +154,15 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblServidor;
         private System.Windows.Forms.TextBox txtServidor;
-        private System.Windows.Forms.TextBox txtBaseDatos;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.CheckBox chkWindowsAuth;
+        private System.Windows.Forms.Label lblContrasena;
+        private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btnConectar;
-        private System.Windows.Forms.Button btnProbar;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblBasesDatos;
+        private System.Windows.Forms.ComboBox cmbBasesDatos;
     }
 }
-
