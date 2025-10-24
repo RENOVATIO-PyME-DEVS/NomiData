@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -28,6 +29,9 @@ namespace NomiData
         // Controles para la captura de scripts libres.
         private RichTextBox txtScriptLibre;
         private Button btnEjecutarLibre;
+        private Button btnExportarExcel;
+
+        private DataGridView dgvResultados;
 
         private Label lblBaseDatosSeleccionada;
 
@@ -150,14 +154,14 @@ namespace NomiData
             {
                 Text = "Ejecución de script libre",
                 Location = new Point(12, 240),
-                Size = new Size(860, 300)
+                Size = new Size(860, 320)
             };
 
             txtScriptLibre = new RichTextBox
             {
                 Name = "txtScriptLibre",
                 Location = new Point(20, 30),
-                Size = new Size(820, 200),
+                Size = new Size(820, 180),
                 DetectUrls = false
             };
 
@@ -165,13 +169,35 @@ namespace NomiData
             {
                 Name = "btnEjecutarLibre",
                 Text = "Ejecutar script libre",
-                Location = new Point(20, 240),
+                Location = new Point(20, 220),
                 Size = new Size(200, 35)
             };
             btnEjecutarLibre.Click += btnEjecutarLibre_Click;
 
+            btnExportarExcel = new Button
+            {
+                Name = "btnExportarExcel",
+                Text = "Exportar resultados",
+                Location = new Point(240, 220),
+                Size = new Size(200, 35)
+            };
+            btnExportarExcel.Click += btnExportarExcel_Click;
+
+            dgvResultados = new DataGridView
+            {
+                Name = "dgvResultados",
+                Location = new Point(20, 260),
+                Size = new Size(820, 50),
+                ReadOnly = true,
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+            };
+
             grpLibre.Controls.Add(txtScriptLibre);
             grpLibre.Controls.Add(btnEjecutarLibre);
+            grpLibre.Controls.Add(btnExportarExcel);
+            grpLibre.Controls.Add(dgvResultados);
 
             Controls.Add(lblBaseDatosSeleccionada);
             Controls.Add(grpStoredProcedure);
@@ -192,12 +218,13 @@ namespace NomiData
 
             var parametros = new List<SqlParameter>
             {
-                CrearParametro("@Param1", txtParam1.Text),
-                CrearParametro("@Param2", txtParam2.Text),
-                CrearParametro("@Param3", txtParam3.Text)
+                CrearParametro("@param1", txtParam1.Text),
+                CrearParametro("@param2", txtParam2.Text),
+                CrearParametro("@param3", txtParam3.Text)
             };
 
-            EjecutarComandoSQL(scriptStoredProcedure, parametros);
+            var resultado = EjecutarConsulta(scriptStoredProcedure, parametros);
+            MostrarResultados(resultado);
         }
 
         /// <summary>
@@ -221,45 +248,143 @@ namespace NomiData
                 return;
             }
 
-            EjecutarComandoSQL(scriptLibre);
+            var resultado = EjecutarConsulta(scriptLibre);
+            MostrarResultados(resultado);
         }
 
         /// <summary>
-        /// Ejecuta un comando SQL contra la base de datos seleccionada.
+        /// Ejecuta una consulta SQL contra la base de datos seleccionada y devuelve un DataTable con los resultados.
         /// </summary>
-        /// <param name="comando">Texto del comando o nombre del stored procedure.</param>
+        /// <param name="query">Texto del comando o nombre del stored procedure.</param>
         /// <param name="parametros">Parámetros opcionales a enviar.</param>
-        public void EjecutarComandoSQL(string comando, List<SqlParameter> parametros = null)
+        public DataTable EjecutarConsulta(string query, List<SqlParameter> parametros = null)
         {
-            if (string.IsNullOrWhiteSpace(comando))
+            if (string.IsNullOrWhiteSpace(query))
             {
                 MessageBox.Show("El comando SQL no puede estar vacío.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return null;
             }
 
             try
             {
                 using (var conexion = new SqlConnection(_connectionString))
-                using (var cmd = new SqlCommand(comando, conexion))
+                using (var cmd = new SqlCommand(query, conexion))
                 {
-                    cmd.CommandType = DeterminarTipoComando(comando, parametros);
+                    cmd.CommandType = DeterminarTipoComando(query, parametros);
 
                     if (parametros != null && parametros.Any())
                     {
                         cmd.Parameters.AddRange(parametros.ToArray());
                     }
 
-                    conexion.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Ejecución correcta", "Información",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    using (var adaptador = new SqlDataAdapter(cmd))
+                    {
+                        var dataTable = new DataTable();
+                        adaptador.Fill(dataTable);
+
+                        MessageBox.Show("Consulta ejecutada correctamente.", "Información",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        return dataTable;
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Muestra los resultados de la consulta en el DataGridView.
+        /// </summary>
+        /// <param name="dt">Tabla con los datos obtenidos.</param>
+        private void MostrarResultados(DataTable dt)
+        {
+            dgvResultados.DataSource = null;
+
+            if (dt == null)
+            {
+                MessageBox.Show("No se devolvieron resultados.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            dgvResultados.DataSource = dt;
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No se devolvieron resultados.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        /// <summary>
+        /// Exporta a un archivo CSV los resultados mostrados en el DataGridView.
+        /// </summary>
+        private void btnExportarExcel_Click(object sender, EventArgs e)
+        {
+            if (!(dgvResultados.DataSource is DataTable dataTable) || dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay resultados para exportar.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (var dialogo = new SaveFileDialog
+            {
+                Filter = "Archivo CSV (*.csv)|*.csv",
+                FileName = $"Resultados_{DateTime.Now:yyyyMMdd_HHmmss}.csv"
+            })
+            {
+                if (dialogo.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                try
+                {
+                    using (var writer = new StreamWriter(dialogo.FileName))
+                    {
+                        // Escribir encabezados
+                        var columnas = dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName);
+                        writer.WriteLine(string.Join(",", columnas));
+
+                        // Escribir filas
+                        foreach (DataRow fila in dataTable.Rows)
+                        {
+                            var valores = fila.ItemArray.Select(valor =>
+                            {
+                                var texto = valor?.ToString() ?? string.Empty;
+                                // Escapar comillas y separar valores
+                                if (texto.Contains("\""))
+                                {
+                                    texto = texto.Replace("\"", "\"\"");
+                                }
+
+                                if (texto.Contains(",") || texto.Contains("\n"))
+                                {
+                                    texto = $"\"{texto}\"";
+                                }
+
+                                return texto;
+                            });
+
+                            writer.WriteLine(string.Join(",", valores));
+                        }
+                    }
+
+                    MessageBox.Show("Exportación completada correctamente.", "Información",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al exportar: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
