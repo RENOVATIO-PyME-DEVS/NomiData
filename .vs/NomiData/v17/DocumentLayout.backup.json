@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|c:\\users\\guada\\music\\vs2022\\nomidata\\nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|c:\\users\\guada\\music\\vs2022\\nomidata\\nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|solutionrelative:nomidata\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7FA10AA-D479-430D-BB69-8ADDCA3045F9}|NomiData\\NomiData.csproj|C:\\Users\\guada\\Music\\VS2022\\NomiData\\nomidata\\frmmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 27,
+          "SelectedChildIndex": 28,
           "Children": [
             {
               "$type": "Bookmark",
@@ -153,27 +153,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs",
               "RelativeDocumentMoniker": "NomiData\\Form1.cs",
               "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs",
               "RelativeToolTip": "NomiData\\Form1.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAmwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAmwEEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-25T23:08:49.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs",
               "RelativeDocumentMoniker": "NomiData\\Form1.cs",
               "ToolTip": "C:\\Users\\guada\\Music\\VS2022\\NomiData\\NomiData\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "NomiData\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T22:31:25.775Z"
+              "WhenOpened": "2025-08-25T22:31:25.775Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

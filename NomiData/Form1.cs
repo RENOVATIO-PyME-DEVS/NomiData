@@ -62,7 +62,9 @@ namespace NomiData
                             var nombreBase = reader.GetString(0);
 
                             // Filtrar bases que contengan la palabra "directorio" (sin importar mayúsculas/minúsculas).
-                            if (nombreBase.IndexOf("directorio", StringComparison.OrdinalIgnoreCase) >= 0)
+                            if ((nombreBase.IndexOf("document", StringComparison.OrdinalIgnoreCase) >= 0) 
+                                    || 
+                                    (nombreBase.IndexOf("other", StringComparison.OrdinalIgnoreCase) >= 0))
                             {
                                 continue;
                             }
