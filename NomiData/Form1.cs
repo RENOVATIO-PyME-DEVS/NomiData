@@ -1,13 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NomiData
@@ -17,89 +10,78 @@ namespace NomiData
         public Form1()
         {
             InitializeComponent();
+        }
 
-            txtServidor.Text = @".\SQLEXPRESS";
-            txtBaseDatos.Text = "master";
-            chkWindowsAuth.Checked = true;
-            txtUsuario.Enabled = txtPassword.Enabled = !chkWindowsAuth.Checked;
-
-            chkWindowsAuth.CheckedChanged += (_, __) =>
+        /// <summary>
+        /// Maneja el evento Click del botón de conexión.
+        /// Establece la conexión con SQL Server y carga las bases de datos.
+        /// </summary>
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            // Validar los datos mínimos necesarios.
+            if (string.IsNullOrWhiteSpace(txtServidor.Text))
             {
-                txtUsuario.Enabled = txtPassword.Enabled = !chkWindowsAuth.Checked;
-            };
+                MessageBox.Show("Ingrese el nombre del servidor.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtServidor.Focus();
+                return;
+            }
 
-            //btnProbar.Click += (_, __) => ProbarConexion();
-            //btnConectar.Click += (_, __) =>
-            //{
-            //    if (ProbarConexion())
-            //    {
-            //        var connString = ConstruirConnectionString();
-            //        Hide();
-            //        using (var frm = new FrmMenu(connString))
-            //            frm.ShowDialog();
-            //        Close();
-            //    }
-            //};
-        }
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                MessageBox.Show("Ingrese el usuario.", "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsuario.Focus();
+                return;
+            }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //string script = File.ReadAllText(@"Scripts\reporte_nominas.sql");
-
-        }
-
-        private string ConstruirConnectionString()
-        {
-            var builder = new SqlConnectionStringBuilder
+            // Preparar la cadena de conexión a SQL Server.
+            var connectionStringBuilder = new SqlConnectionStringBuilder
             {
                 DataSource = txtServidor.Text.Trim(),
-                InitialCatalog = txtBaseDatos.Text.Trim(),
-                TrustServerCertificate = true,     
-                Encrypt = false                    // true si tu servidor lo requiere
+                UserID = txtUsuario.Text.Trim(),
+                Password = txtContrasena.Text,
+                InitialCatalog = "master",          // Usamos la base master para enumerar las demás bases.
+                IntegratedSecurity = false,
+                TrustServerCertificate = true,
+                Encrypt = false
             };
 
-            if (chkWindowsAuth.Checked)
-            {
-                builder.IntegratedSecurity = true;
-            }
-            else
-            {
-                builder.UserID = txtUsuario.Text.Trim();
-                builder.Password = txtPassword.Text;
-            }
-            return builder.ToString();
-        }
-
-        private bool ProbarConexion()
-        {
             try
             {
-                lblEstado.Text = "Conectando...";
-                using (var cn = new SqlConnection(ConstruirConnectionString()))
+                using (var connection = new SqlConnection(connectionStringBuilder.ToString()))
                 {
-                    cn.Open();
-                    var cmd = new SqlCommand("SELECT @@VERSION", cn);
-                    var ver = (string)cmd.ExecuteScalar();
-                    lblEstado.Text = "OK: " + ver.Split('\n')[0].Trim();
+                    connection.Open();
+
+                    // Consulta para traer todas las bases de datos del servidor.
+                    using (var command = new SqlCommand("SELECT name FROM sys.databases", connection))
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var bases = new List<string>();
+
+                        while (reader.Read())
+                        {
+                            var nombreBase = reader.GetString(0);
+
+                            // Filtrar bases que contengan la palabra "directorio" (sin importar mayúsculas/minúsculas).
+                            if (nombreBase.IndexOf("directorio", StringComparison.OrdinalIgnoreCase) >= 0)
+                            {
+                                continue;
+                            }
+
+                            bases.Add(nombreBase);
+                        }
+
+                        // Vincular los nombres obtenidos al ComboBox.
+                        cmbBasesDatos.DataSource = bases;
+                    }
                 }
-                return true;
+
+                MessageBox.Show("Conexión exitosa", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                lblEstado.Text = "Error: " + ex.Message;
-                MessageBox.Show(ex.Message, "Conexión fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                // Mostrar cualquier error durante la conexión o la consulta.
+                MessageBox.Show(ex.Message, "Error al conectar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnProbar_Click(object sender, EventArgs e)
-        {
-            ProbarConexion();
         }
     }
 }
