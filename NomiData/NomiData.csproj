@@ -181,6 +181,9 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEjecucionScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
